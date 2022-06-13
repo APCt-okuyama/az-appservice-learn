@@ -1,13 +1,5 @@
 # backend_pythons
 
-## Azure リソースグループ作成/削除
-(注意) 不要になったらリソースグループごと削除する
-```
-export ResourceGroup=training-okuyama
-az group create --name $ResourceGroup --location japaneast
-az group delete --name $ResourceGroup -y
-```
-
 ## Python開発環境 セットアップ
 
 Pythonのバージョン
@@ -89,7 +81,7 @@ docker push tokym/my-python-app:v2
 
 ## App Serviceへのデプロイ
 
-プランを作成
+プランを作成 (--is-linux)
 ```
 export ResourceGroup=training-okuyama
 az appservice plan create --name my-example-app-plan --resource-group $ResourceGroup --is-linux
