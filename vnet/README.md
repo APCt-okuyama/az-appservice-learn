@@ -1,8 +1,5 @@
 # VNet統合
 
-okuyamatestuser01
-Okuyama@12345
-
 SQL Serverを利用するので自分でDBを準備する必要がある。
 https://docs.microsoft.com/ja-jp/azure/app-service/tutorial-dotnetcore-sqldb-app?tabs=azure-portal%2Cazure-cli-deploy%2Cdeploy-instructions-azure-portal%2Cazure-portal-logs%2Cazure-portal-resources#3---create-the-database
 
