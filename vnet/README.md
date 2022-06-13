@@ -6,7 +6,6 @@ https://docs.microsoft.com/ja-jp/azure/app-service/tutorial-dotnetcore-sqldb-app
 https://training-vnet-integration.scm.azurewebsites.net:443/training-vnet-integration.git
 
 
-
 ```
 az sql server create --location japaneast --resource-group $ResourceGroup --name trainingdb001 --admin-user myadminuser --admin-password Password@123
 ```
