@@ -2,6 +2,11 @@
 
 SPAをホスティングしたnginxをデプロイしてみる
 
+| SPAを含むフォルダ | 内容 |
+| --- | --- |
+| static-html-directory | 単純なindex.html
+| startbootstrap-sb-admin-2-gh-pages | bootstrapのサンプル<br>https://startbootstrap.com/theme/sb-admin-2 |
+
 
 ## Docker / Nginx Image
 
@@ -55,6 +60,11 @@ az webapp config appsettings set --resource-group $ResourceGroup --name my-nginx
 
 curlで確認
 ```
-curl https://my-example-container-app.azurewebsites.net/
+curl https://my-nginxweb-container-app.azurewebsites.net
 test this is index.html
+```
+
+app serviceの再起動 (※再起動するとimageが再デプロイされて更新される)
+```
+az webapp restart --name my-nginxweb-container-app --resource-group $ResourceGroup
 ```
