@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "im woring on docker container.v2x2"
+    return "im woring on docker container.(python Flask.)"
 
 @app.route("/hello")
 def hello_hello():

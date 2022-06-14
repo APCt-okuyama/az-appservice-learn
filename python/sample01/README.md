@@ -69,14 +69,14 @@ App Service にカスタム イメージをデプロイする
 
 build
 ```
-docker build -t tokym/my-python-app:v2 .
+docker build -t tokym/my-python-app:v1 .
 docker run --rm -p 8080:5000 my-python-app 
 ```
 
 push (docker hub)
 ```
 docker login
-docker push tokym/my-python-app:v2
+docker push tokym/my-python-app:v1
 ```
 
 ## App Serviceへのデプロイ
@@ -89,22 +89,27 @@ az appservice plan create --name my-example-app-plan --resource-group $ResourceG
 
 WEBアプリを作成
 ```
-az webapp create --resource-group $ResourceGroup --plan my-example-app-plan --name my-example-container-app --deployment-container-image-name tokym/my-python-app:v1
+az webapp create --resource-group $ResourceGroup --plan my-example-app-plan --name my-pythonapi-container-app --deployment-container-image-name tokym/my-python-app:v1
 ```
 
 WEBSITES_PORTを設定(app serviceで公開されるport(443)にマッピングされる) デフォルトでは80がマッピングされている
 ```
-az webapp config appsettings set --resource-group $ResourceGroup --name my-example-container-app --settings WEBSITES_PORT=5000
+az webapp config appsettings set --resource-group $ResourceGroup --name my-pythonapi-container-app --settings WEBSITES_PORT=5000
 ```
 
-コンテナを更新
+コンテナを更新 (v1からv2に変更)
 ```
-az webapp config container set --name my-example-container-app --resource-group $ResourceGroup --docker-custom-image-name tokym/my-python-app:v2 --docker-registry-server-url https://tokym
+az webapp config container set --name my-pythonapi-container-app --resource-group $ResourceGroup --docker-custom-image-name tokym/my-python-app:v2 --docker-registry-server-url https://tokym
+```
+
+app serviceの再起動
+```
+az webapp restart --name my-pythonapi-container-app --resource-group $ResourceGroup
 ```
 
 確認
 ```
-curl https://my-example-container-app.azurewebsites.net/
+curl https://my-pythonapi-container-app.azurewebsites.net
 ```
 
 ## App Serviceへのデプロイ(CICD設定)

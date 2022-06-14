@@ -5,7 +5,7 @@ SPAをホスティングしたnginxをデプロイしてみる
 | SPAを含むフォルダ | 内容 |
 | --- | --- |
 | static-html-directory | 単純なindex.html
-| startbootstrap-sb-admin-2-gh-pages | bootstrapのサンプル<br>https://startbootstrap.com/theme/sb-admin-2 |
+| startbootstrap-sb-admin-2-gh-pages | bootstrapのサンプル<br>https://startbootstrap.com/theme/sb-admin-2 <br> サイズが少し大きめ 約17MB|
 
 
 ## Docker / Nginx Image
