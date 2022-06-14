@@ -68,3 +68,8 @@ app serviceの再起動 (※再起動するとimageが再デプロイされて�
 ```
 az webapp restart --name my-nginxweb-container-app --resource-group $ResourceGroup
 ```
+
+log tail
+```
+az webapp log tail --name my-nginxweb-container-app --resource-group $ResourceGroup
+```

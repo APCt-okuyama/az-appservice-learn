@@ -70,7 +70,7 @@ App Service にカスタム イメージをデプロイする
 build
 ```
 docker build -t tokym/my-python-app:v1 .
-docker run --rm -p 8080:5000 my-python-app 
+docker run --rm -p 8080:5000 tokym/my-python-app:v1 
 ```
 
 push (docker hub)
@@ -110,6 +110,16 @@ az webapp restart --name my-pythonapi-container-app --resource-group $ResourceGr
 確認
 ```
 curl -i https://my-pythonapi-container-app.azurewebsites.net
+```
+
+コンテナーのログ記録を有効にする
+```
+az webapp log config --name my-pythonapi-container-app --resource-group $ResourceGroup --docker-container-logging filesystem
+```
+
+log tail
+```
+az webapp log tail --name my-pythonapi-container-app --resource-group $ResourceGroup
 ```
 
 ## App Serviceへのデプロイ(CICD設定)

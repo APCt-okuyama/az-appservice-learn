@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
+import logging
 
 #####################
 import psycopg2
@@ -19,7 +20,8 @@ CORS(app)
 
 @app.route("/")
 def hello_world():
-    return "im woring on docker container.(python Flask.)"
+    print('hello_world start ...')
+    return "im woring on docker container.(python Flask.2)"
 
 @app.route("/hello")
 def hello_hello():
@@ -35,3 +37,6 @@ def tasks():
     # mydata = json.dumps(results)
     # cur.close()
     return "mydata"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")

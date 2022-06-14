@@ -11,4 +11,5 @@ COPY . .
 EXPOSE 5000
 
 # --host=0.0.0.0 外部からのアクセスを可能に。わすれがち。。
-CMD [ "flask", "run", "--host=0.0.0.0" ]
+#CMD [ "flask", "run", "--host=0.0.0.0" ]
+CMD [ "python", "-u", "app.py", "--host=0.0.0.0" ]
