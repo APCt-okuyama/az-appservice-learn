@@ -7,7 +7,7 @@ App Service とは Web Apps, Functions, Logic Appsを含めたサービスの総
 ## Azure リソースグループ作成/削除
 (注意) 不要になったらリソースグループごと削除する
 ```
-export ResourceGroup=training-okuyama
+export ResourceGroup=az-appservice-example
 az group create --name $ResourceGroup --location japaneast
 az group delete --name $ResourceGroup -y
 ```

@@ -38,7 +38,7 @@ flask run --host=0.0.0.0
 
 App Service プランとApp Service
 ```
-export ResourceGroup=training-okuyama
+export ResourceGroup=az-appservice-example
 # App Service プランを作成 (linux, sku B1で作成)
 # sku B1: コア数 1, RAM 1.75GB 8212円/月 
 az appservice plan create -g $ResourceGroup -l japaneast -n my-example-app-plan --sku B1 --is-linux
@@ -83,7 +83,7 @@ docker push tokym/my-python-app:v2
 
 プランを作成 (--is-linux)
 ```
-export ResourceGroup=training-okuyama
+export ResourceGroup=az-appservice-example
 az appservice plan create --name my-example-app-plan --resource-group $ResourceGroup --is-linux
 ```
 
