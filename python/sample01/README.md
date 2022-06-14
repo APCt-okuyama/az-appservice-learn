@@ -109,7 +109,7 @@ az webapp restart --name my-pythonapi-container-app --resource-group $ResourceGr
 
 確認
 ```
-curl https://my-pythonapi-container-app.azurewebsites.net
+curl -i https://my-pythonapi-container-app.azurewebsites.net
 ```
 
 ## App Serviceへのデプロイ(CICD設定)
