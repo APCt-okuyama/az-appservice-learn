@@ -38,18 +38,20 @@ docker search tokym
 
 プランを作成 (--is-linux)
 ```
-az appservice plan create --name my-example-app-plan --resource-group $ResourceGroup --is-linux
+az appservice plan create --name my-example-app-plan --resource-group $ResourceGroup --is-linux -l japaneast
 ```
 
-WEBアプリを作成
+WEBアプリを作成 (--deployment-container-image-name でコンテナを指定)
 ```
-az webapp create --resource-group $ResourceGroup --plan my-example-app-plan --name my-example-container-app --deployment-container-image-name tokym/nginx_test:v1
+az webapp create --resource-group $ResourceGroup --plan my-example-app-plan --name my-nginxweb-container-app --deployment-container-image-name tokym/nginx_test:v1
 ```
 
-WEBSITES_PORTを設定(app serviceで公開されるport(443)にマッピングされる)
+WEBSITES_PORTを設定(app serviceで公開されるport(443)にマッピングされる) デフォルトでは80がマッピングされる
+※nginxのデフォルトポートは80なのでこの設定はしなくても良い
 ```
-az webapp config appsettings set --resource-group $ResourceGroup --name my-example-container-app --settings WEBSITES_PORT=80
+az webapp config appsettings set --resource-group $ResourceGroup --name my-nginxweb-container-app --settings WEBSITES_PORT=80
 ```
+
 
 curlで確認
 ```

@@ -92,7 +92,7 @@ WEBアプリを作成
 az webapp create --resource-group $ResourceGroup --plan my-example-app-plan --name my-example-container-app --deployment-container-image-name tokym/my-python-app:v1
 ```
 
-WEBSITES_PORTを設定(app serviceで公開されるport(443)にマッピングされる)
+WEBSITES_PORTを設定(app serviceで公開されるport(443)にマッピングされる) デフォルトでは80がマッピングされている
 ```
 az webapp config appsettings set --resource-group $ResourceGroup --name my-example-container-app --settings WEBSITES_PORT=5000
 ```
